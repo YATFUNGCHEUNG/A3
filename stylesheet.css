@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface:400');
+
 .grid-container {
     display: grid;
     grid-template-columns: 300px 1fr 300px;
@@ -30,7 +32,7 @@
   
 .vis2 { grid-area: vis2; }
 
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface:400');
+/*Typography archieved from typescale.com*/
 
 html {font-size: 100%;} /*16px*/
 
