@@ -17,7 +17,7 @@ Plotly.d3.csv("sentiment_value.csv", function(rows){
     var trace0= {
         type: "scatter",
         mode: "lines",
-        name: "APPL High",
+        name: "Sentiment value",
         x: unpack(rows, "Date"),
         y: unpack(rows, "Sentiment value"),
         line: {
