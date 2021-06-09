@@ -86,8 +86,8 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
         margin: {
             l: 100,
             r: 50,
-            b: 80,
-            t: 80,
+            b: 100,
+            t: 100,
             pad: 20
         },
         xaxis: {
@@ -95,7 +95,7 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
                 text: 'x Axis',
                 font: {
                   family: 'Abril Fatface',
-                  size: 18,
+                  size: 23,
                   color: 'rgb(8,160,233)'
                 }
               },
@@ -103,7 +103,8 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
                 family: 'Abril Fatface',
                 size: 13,
                 color: 'rgb(8,160,233)'
-            },  
+            },
+            ticklabelposition: "inside",  
             autorange: true,
             rangeselector: {
                 buttons: [{
