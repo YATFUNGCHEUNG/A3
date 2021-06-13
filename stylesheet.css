@@ -1,21 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface:400');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,200;1,400;1,500&display=swap');
 
 .grid-container {
     display: grid;
-    grid-template-columns: 200px 1fr 200px;
-    grid-template-rows: 300px 1fr 1fr;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 800px 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
       "header header header"
-      "nav main aside"
-      "nav main aside";
+      "main main main"
+      "main main main";
   }
   
-.header { grid-area: header; }
+.header { grid-area: header; 
+    background-color: #08A0E9;
+}
   
-.nav { grid-area: nav; }
+.nav { grid-area: nav; 
+    background-color: lightblue;
+}
   
-.aside { grid-area: aside; }
+.aside { grid-area: aside; 
+    background-color: lightblue;
+}
   
 .main {
     display: grid;
@@ -28,9 +36,15 @@
     grid-area: main;
 }
   
-.vis1 { grid-area: vis1; }
+.vis1 { 
+  grid-area: vis1; 
+  background-color: #08A0E9;
+}
   
-.vis2 { grid-area: vis2; }
+.vis2 { 
+  grid-area: vis2;
+  background-color: #6F3A00; 
+}
 
 /*Typography archieved from typescale.com*/
 
@@ -44,7 +58,28 @@ body {
   color: #000000;
 }
 
-p {margin-bottom: 1rem;}
+p {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: white;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+strong {
+  font-size: 2.3rem;
+}
+
+img {
+  height:100%;
+  filter: grayscale(100%);
+}
 
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
@@ -55,16 +90,70 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   margin-top: 0;
-  font-size: 3.052rem;
+  font-size: 4.52rem;
+  margin: auto;
+  text-align: right;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  color: white;
 }
 
-h2 {font-size: 2.441rem;}
+h2 {
+  font-size: 1.1rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  width: 25%;
+  margin: auto;
+  text-align: justify;
+  text-justify: inter-word;
+  position: absolute;
+  right: 100px;
+  top: 350px;
+  color: white;
+}
 
-h3 {font-size: 1.953rem;}
+h3 {
+  font-size: 3.553rem;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
 
-h4 {font-size: 1.563rem;}
+h4 {
+  font-size: 1.563rem;
+  font-family: 'Spectral', serif;
+  font-weight: 550;
+  width: 70%;
+  margin: auto;
+  padding: 80px;
+  text-align: center;
+  color: white;
+}
 
-h5 {font-size: 1.25rem;}
+h5 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+hr {
+  width:50%;
+  top: 20px;
+  border: none;
+  height: 6px;
+  background: black;
+  margin-bottom: 50px;
+}
 
 small, .text_small {font-size: 0.8rem;}
   

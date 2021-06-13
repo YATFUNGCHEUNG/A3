@@ -1,4 +1,4 @@
-Date,Time,Sentiment value,Wording choice(Coronavirus),Wording choice(Chinese Virus),Wording choice(virus),
+Date,Time,Sentiment value,Wording choice(Coronavirus),Wording choice(Chinese Virus),Wording choice(virus),content
 2020-01-24,21:18:15,0.146875,1,,,"""China has been working very hard to contain the Coronavirus. The United States greatly appreciates their efforts and transparency. It will all work out well. In particular, on behalf of the American People, I want to thank President Xi!"""
 2020-01-27,14:56:21,0.158,,,1,"""We are in very close communication with China concerning the virus. Very few cases reported in USA, but strongly on watch. We have offered China and President Xi any help that is necessary. Our experts are extraordinary!"""
 2020-01-30,00:06:52,0.8083333333,1,,,"""Just received a briefing on the Coronavirus in China from all of our GREAT agencies, who are also working closely with China. We will continue to monitor the ongoing developments. We have the best experts anywhere in the world, and they are on top of it 24/7! https://t.co/rrtF1Stk78"""
