@@ -1,21 +1,26 @@
+//The basic setup of this js file was done by following Rob's week 9 tutorial: https://www.youtube.com/watch?v=oqgxpT5hA7Q&ab_channel=DesigningwithAILab
 const config = {
     displayModeBar: false,
     responsive: true
 }
 
+//Rob's code
 const plot1Div = document.getElementById("vis1");
 const plot2Div = document.getElementById("vis2");
 
+//importing my own csv file
 Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
-
+    //Setting up the first trace for the first visulisation graph
     var trace0= {
         type: "scatter",
         //tweets = tweets.filter(tweet => tweet.sentiment > 0.5) //positive tweets
         //tweets = tweets.filter(tweet => tweet.sentiment < 0) //negative tweets
         name: "Sentiment value <br>> 0.5 = positive tweets<br>< 0 = negative tweets",
+        //This part of the code was taken Rob's week 10 tutorial part 1: Plotly Maps as a reference: https://www.youtube.com/watch?v=HVKJJvyNhAQ&ab_channel=DesigningwithAILabDesigningwithAILab
         x: unpack(rows, "Date"),
         y: unpack(rows, "Sentiment value"),
         customdata: unpack(rows, 'content').map(x => convertToParagraph(x, 64)),
+        //Changing the information displayed on the hovertemplate
         hovertemplate:
               "Trump: %{customdata}<br>" +
               "<br>"+
@@ -32,31 +37,31 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
             size: 8
         }
     }
-
+    //Setting up the second trace for the first visulisation graph
     var trace1= {
         name: "Count of the term 'Coronavirus' <br> used in Trump's tweet on the date",
         x: unpack(rows, "Date"),
         y: unpack(rows, "Wording choice(Coronavirus)"),
         type: "bar",
+        //I don't want any information shown when users hover over
         hoverinfo: "skip",
         marker: {
             color: '#08A0E9',
-            opacity: 1,
         }
     }
-
+    //Setting up the third trace for the first visulisation graph
     var trace2= {
         name: "Count of the term 'Chinese Virus' <br> used in Trump's tweet on the date",
         x: unpack(rows, "Date"),
         y: unpack(rows, "Wording choice(Chinese Virus)"),
         type: "bar",
+        //I don't want any information shown when users hover over
         hoverinfo: "skip",
         marker: {
             color: '#DD76A8',
-            opacity: 1,
           }
     }
-
+    //Setting up the forth trace for the first visulisation graph
     var trace3= {
         name: "Count of the term 'virus' <br> used in Trump's tweet on the date", 
         x: unpack(rows, "Date"),
@@ -65,14 +70,13 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
         hoverinfo: "skip",
         marker: {
             color: '#9EADBD',
-            opacity: 1,
           }
     }
-
+    //Combining all the traces to form the first visulisation graph
     var data1 = [trace0, trace1, trace2, trace3];
-
+    //Setting the layout for the first visulisation graph
     var layout1 = {
-        /*https://plotly.com/javascript/bar-charts/*/
+        /*bar mode has been set to stack in order to stack up the trace 1, 2 , 3. Reference: https://plotly.com/javascript/bar-charts/*/
         barmode: 'stack',
         title: {
             text:'Sentiment value of Donald Trump‘s China COVID-19 related tweets from 2020 January to March',
@@ -112,6 +116,7 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
             },
             ticklabelposition: "inside",
             autorange: true,
+            //The range selector was created by following Rob's week 9 tutorial: https://www.youtube.com/watch?v=oqgxpT5hA7Q&ab_channel=DesigningwithAILab
             rangeselector: {
                 buttons: [{
                         count: 1,
@@ -123,6 +128,7 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
                     }    
                 ]
             },
+            //The range slider was created by following Rob's week 9 tutorial: https://www.youtube.com/watch?v=oqgxpT5hA7Q&ab_channel=DesigningwithAILab
             type: 'date',
             rangeslider: { range: ['2020-01-24', '2020-03-27'] }
         },
@@ -143,6 +149,7 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
             },
             autorange: true,
         },
+        //Styling for the annotation in the first visualisation graph
         annotations: [
             {
                 x: "2020-03-12 22:37:00-0800",
@@ -162,14 +169,15 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
                 opacity: 0.8
             }
         ],
+        //Styling for the hoverlabel and the hovermode
         hovermode:'closest',
         hoverlabel: { bgcolor: "rgb(8,160,233)" }
     }
-
+    //Styling for the color of the piechart
     var PieColors = [
         ['#08004F', '#6441A1', '#A178DF', '#EDC0FF']
     ];
-
+    //Inserting data for the piechart
     var data2 = [{
         values: [6.06, 22.42, 63.03, 8.48],
         labels: ['Chinese Virus', 'China Virus', 'Coronavirus', 'COVID-19'],
@@ -179,9 +187,8 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
             colors: PieColors[0]
         }
     }];
-      
+    //Setting the layout for the second visulisation graph
     var layout2 = {
-        /*https://plotly.com/javascript/bar-charts/*/
         barmode: 'stack',
         title: {
             text:'Ratio of appearance between each phrase on Trump‘s tweets in 2020',
@@ -215,12 +222,13 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
         }
     }
 
-
+    //Appoint each datasets and their layout onto the plot div which they belong to
     Plotly.newPlot(plot1Div, data1, layout1, config);
     Plotly.newPlot(plot2Div, data2, layout2, config);
 });
 
-//from https://codereview.stackexchange.com/a/171857
+//This part of code was copied from the js file written by Alex in his week 11 tutorial: https://www.youtube.com/watch?v=H3ZI9sNbG5E&ab_channel=DesigningwithAILab,from which he copied from https://codereview.stackexchange.com/a/171857 
+//The purpose of this function is to setup the length of the paragraph sentence.
 function convertToParagraph(sentence, maxLineLength){
     let lineLength = 0;
     sentence = sentence.split(" ")

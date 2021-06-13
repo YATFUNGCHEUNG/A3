@@ -1,7 +1,9 @@
+/* importing fonts from Google fonts*/
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface:400');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,200;1,400;1,500&display=swap');
 
+/* The CSS grid-container was set up by following Rob's week 9 tutorial: https://www.youtube.com/watch?v=oqgxpT5hA7Q&ab_channel=DesigningwithAILab*/
 .grid-container {
     display: grid;
     grid-template-columns: 1fr ;
@@ -12,17 +14,10 @@
       "main main main"
       "main main main";
   }
-  
+
+/*Styling for background color of the header*/
 .header { grid-area: header; 
     background-color: #08A0E9;
-}
-  
-.nav { grid-area: nav; 
-    background-color: lightblue;
-}
-  
-.aside { grid-area: aside; 
-    background-color: lightblue;
 }
   
 .main {
@@ -35,21 +30,23 @@
       "vis2 vis2";
     grid-area: main;
 }
-  
+
+/*Styling for background color of the first visualisation*/
 .vis1 { 
   grid-area: vis1; 
   background-color: #08A0E9;
 }
-  
+
+/*Styling for background color of the second visualisation*/
 .vis2 { 
   grid-area: vis2;
-  background-color: #6F3A00; 
+  background-color: #3A4856; 
 }
 
-/*Typography archieved from typescale.com*/
-
+/*Typography template was archieved from typescale.com, followed by my own customisation to each element*/
 html {font-size: 100%;} /*16px*/
 
+/*Styling for the body*/
 body {
   background: white;
   font-family: 'Abril Fatface', sans-serif;
@@ -58,6 +55,7 @@ body {
   color: #000000;
 }
 
+/*Styling for the paragraph*/
 p {
   margin-bottom: 1rem;
   text-align: center;
@@ -72,22 +70,18 @@ p {
   text-justify: inter-word;
 }
 
+/*Styling for the paragraph text which highlight as strong*/
 strong {
   font-size: 2.3rem;
 }
 
+/*Styling for the image used*/
 img {
   height:100%;
   filter: grayscale(100%);
 }
 
-h1, h2, h3, h4, h5 {
-  margin: 3rem 0 1.38rem;
-  font-family: 'Abril Fatface', sans-serif;
-  font-weight: 400;
-  line-height: 1.3;
-}
-
+/*Styling for the first header*/
 h1 {
   margin-top: 0;
   font-size: 4.52rem;
@@ -99,6 +93,7 @@ h1 {
   color: white;
 }
 
+/*Styling for the introduction part under the first header*/
 h2 {
   font-size: 1.1rem;
   font-family: 'Raleway', sans-serif;
@@ -113,6 +108,7 @@ h2 {
   color: white;
 }
 
+/*Styling for the second header*/
 h3 {
   font-size: 3.553rem;
   margin: auto;
@@ -121,6 +117,7 @@ h3 {
   color: white;
 }
 
+/*Styling for the quotes*/
 h4 {
   font-size: 1.563rem;
   font-family: 'Spectral', serif;
@@ -132,20 +129,23 @@ h4 {
   color: white;
 }
 
+/*Styling for the reference*/
 h5 {
   margin-bottom: 1rem;
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.4rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: white;
-  width: 80%;
+  width: 60%;
   margin: auto;
-  padding: 20px;
+  padding: 50px;
   text-align: justify;
   text-justify: inter-word;
+  background-color: #6A95BB; 
 }
 
+/*Styling for the horizontal line*/
 hr {
   width:50%;
   top: 20px;
@@ -154,6 +154,3 @@ hr {
   background: black;
   margin-bottom: 50px;
 }
-
-small, .text_small {font-size: 0.8rem;}
-  
