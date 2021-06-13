@@ -93,13 +93,13 @@ Plotly.d3.csv("extracted_data - Sheet1.csv", function(rows){
             y: 0.5,
             font: {
                 family: 'Abril Fatface',
-                size: 12,
+                size: 15,
                 color: 'black'
             }
         },
         margin: {
             l: 200,
-            r: 360,
+            r: 400,
             b: 100,
             t: 200,
             pad: 25
